@@ -1,2 +1,2 @@
-export * from '../lib/FlexContainer.js';
-export * from '../lib/FlexItem.js';
+export * from '../lib/src/FlexContainer.js';
+export * from '../lib/src/FlexItem.js';

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './index.css';
-import { FlexContainer, FlexItem } from 'useflex'
+import {  } from 'useflex'
 
 export default class App extends Component {
   render () {
