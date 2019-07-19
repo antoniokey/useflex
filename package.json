@@ -1,8 +1,8 @@
 {
   "name": "useflex",
-  "version": "2.2.0",
-  "description": "",
-  "author": "",
+  "version": "2.2.1",
+  "description": "Flex layout in react",
+  "author": "Anton Kalkou",
   "license": "MIT",
   "repository": "https://github.com/progTonee/useflex",
   "main": "dist/index.js",

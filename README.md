@@ -2,7 +2,7 @@
 Useflex allows you to make flex layout using React components.
 You don't need to create any styles, just install 'useflex' library and start using flex layout.
 But if you need some additional styles which are not related to flex you can use style prop with regular js object.
-All properties and how to use yoiu can find below.
+All properties and how to use them you can find below.
 > 
 
 [![NPM](https://img.shields.io/npm/v/useflex.svg)](https://www.npmjs.com/package/useflex) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
@@ -133,6 +133,9 @@ class Example extends Component {
   * **itemType** - Element's name of a flex container. If not specified you have to provide element inside FlexItem or you'll get an error.
   * **className** - For specifying class names.
   * **style** = JS object with styles.
+
+## Authors
+  * Anton Kalkou
 
 ## License
 
