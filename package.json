@@ -1,10 +1,10 @@
 {
   "name": "useflex",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
   "author": "",
   "license": "MIT",
-  "repository": "/useflex",
+  "repository": "https://github.com/progTonee/useflex",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
@@ -16,7 +16,8 @@
     "test": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
     "build": "rollup -c",
-    "start": "rollup -c -w",
+    "build-tsc": "tsc",
+    "start": "npm run build-tsc && rollup -c -w",
     "prepare": "npm run build",
     "predeploy": "cd example && npm install && npm run build",
     "deploy": "gh-pages -d example/build"
@@ -24,7 +25,9 @@
   "peerDependencies": {
     "prop-types": "^15.5.4",
     "react": "^15.0.0 || ^16.0.0",
-    "react-dom": "^15.0.0 || ^16.0.0"
+    "react-dom": "^15.0.0 || ^16.0.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0"
   },
   "devDependencies": {
     "@svgr/rollup": "^2.4.1",
@@ -35,6 +38,8 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "cross-env": "^5.1.4",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "eslint": "^5.0.1",
     "eslint-config-standard": "^11.0.0",
     "eslint-config-standard-react": "^6.0.0",
@@ -57,5 +62,13 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "@types/enzyme": "^3.10.3",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
+    "@types/jest": "^24.0.15",
+    "@types/prop-types": "^15.7.1",
+    "@types/react": "^16.8.23",
+    "jest": "^24.8.0"
+  }
 }
