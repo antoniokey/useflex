@@ -2,14 +2,14 @@ import React from 'react';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
-import { FlexContainer } from '../lib/FlexContainer';
-import { FlexItem } from '../lib/FlexItem';
+import { FlexContainer } from '../lib/src/FlexContainer';
+import { FlexItem } from '../lib/src/FlexItem';
 import {
   fetchFlexContainerStyle,
   fetchFlexItemStyle,
   fetchContainerElementType,
   fetchFlexItemElementType,
-} from '../lib/utils';
+} from '../lib/src/utils';
 
 Enzyme.configure({ adapter: new Adapter() });
 
