@@ -114,13 +114,13 @@ class Example extends Component {
 ```
 
 ## FlexContainer props
-  * **direction** - Direction of a flex container. If not specified - 'div'.
+  * **direction** - Direction of a flex container. If not specified - 'row'.
   * **width | height** - Size of a flex container
   * **justifyContent** - Like 'justify-content' in css. If not specified - 'flex-start'.
   * **alignItems** - Like 'align-items' in css. If not specified - 'flex-start'.
   * **flexBasis | flexShrink | flexGrow | flex** - Like 'flex-basis | flex-shrink | flex-grow | flex' in css.
   * **alignSelf** - Like 'align-self' in css.
-  * **flexContainerElementType** - Element's name of a flex container. If not specified - div.
+  * **flexContainerElementType** - Element's name of a flex container. If not specified - 'div'.
   * **flexWrap** - Like 'flex-wrap in css. If not specefied - 'nowrap'.
   * **className** - For specifying class names.
   * **style** - JS object with styles.
