@@ -110,7 +110,6 @@ class Example extends Component {
       </FlexContainer>
     )
   }
-Ъ
 
 ```
 
