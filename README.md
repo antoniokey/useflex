@@ -110,29 +110,29 @@ class Example extends Component {
       </FlexContainer>
     )
   }
-}
+Ъ
 
 ```
 
 ## FlexContainer props
-  * **direction** - Direction of a flex container.
+  * **direction** - Direction of a flex container. If not specified - 'div'.
   * **width | height** - Size of a flex container
-  * **justifyContent** - Like 'justify-content' in css.
-  * **alignItem** - Like 'align-items' in css.
+  * **justifyContent** - Like 'justify-content' in css. If not specified - 'flex-start'.
+  * **alignItems** - Like 'align-items' in css. If not specified - 'flex-start'.
   * **flexBasis | flexShrink | flexGrow | flex** - Like 'flex-basis | flex-shrink | flex-grow | flex' in css.
   * **alignSelf** - Like 'align-self' in css.
-  * **flexContainerElementType** - Element's name of a flex container. If not specifying - div.
-  * **flexWrap** - Like 'flex-wrap in css.
+  * **flexContainerElementType** - Element's name of a flex container. If not specified - div.
+  * **flexWrap** - Like 'flex-wrap in css. If not specefied - 'nowrap'.
   * **className** - For specifying class names.
-  * **style** = JS object with styles.
+  * **style** - JS object with styles.
 
 ## FlexItem props
-  * **width | height** - Size of a flex container
+  * **width | height** - Size of a flex style.
   * **flexBasis | flexShrink | flexGrow | flex** - Like 'flex-basis | flex-shrink | flex-grow | flex' in css.
   * **alignSelf** - Like 'align-self' in css.
-  * **itemType** - Element's name of a flex container. If not specified you have to provide element inside FlexItem or you'll get an error.
+  * **itemType** - Element's name of a flex item. If not specified you have to provide element inside FlexItem or you'll get an error.
   * **className** - For specifying class names.
-  * **style** = JS object with styles.
+  * **style** - JS object with styles.
 
 ## Authors
   * Anton Kalkou
