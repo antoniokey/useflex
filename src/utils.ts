@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import IFlexContainer from './interfaces/flexContainer.interface';
 import IFlexItem from './interfaces/flexItem.interface';
 
-export const createReactElement = (elementType: string, style: any, className: string, children: any) => {
+export const createReactElement = (elementType: string, style: any, className: string, children: any): ReactElement => {
     const el = React.createElement(
         elementType,
         { 
@@ -15,7 +15,7 @@ export const createReactElement = (elementType: string, style: any, className: s
     return el;
 }
 
-export const fetchFlexContainerStyle = (props: IFlexContainer) => ({
+export const fetchFlexContainerStyle = (props: IFlexContainer): any => ({
     display: 'flex',
     flexDirection: props.direction,
     width: props.width,
@@ -28,13 +28,13 @@ export const fetchFlexContainerStyle = (props: IFlexContainer) => ({
     flexBasis: props.flexBasis,
     alignSelf: props.alignSelf,
     flexWrap: props.flexWrap,
-    flexFlow: props.flexFlow,
+    flexFlow: props.flexFlow ? props.flexFlow : `${props.direction} ${props.flexWrap}` ,
     ...props.style,
 });
 
-export const fetchContainerElementType = (props: IFlexContainer) => props.flexContainerElementType ? props.flexContainerElementType : 'div';
+export const fetchContainerElementType = (props: IFlexContainer): string => props.flexContainerElementType ? props.flexContainerElementType : 'div';
 
-export const fetchFlexItemStyle = (props: IFlexItem) => ({
+export const fetchFlexItemStyle = (props: IFlexItem): any => ({
     flex: props.flex,
     flexGrow: props.flexGrow,
     flexShrink: props.flexShrink,
@@ -46,6 +46,6 @@ export const fetchFlexItemStyle = (props: IFlexItem) => ({
     ...props.style,
 });
 
-export const fetchFlexItemElementType = (props: IFlexItem) => props.itemType ? props.itemType : props.children.type;
+export const fetchFlexItemElementType = (props: IFlexItem): string => props.itemType ? props.itemType : props.children.type;
 
-export const fetchFlexItemElementChildren = (props: IFlexItem) => props.itemType ? props.children : props.children.props.children;
+export const fetchFlexItemElementChildren = (props: IFlexItem): any => props.itemType ? props.children : props.children.props.children;

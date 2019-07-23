@@ -119,7 +119,7 @@ describe ('Utils', () => {
       alignItems: '',
     });
 
-    expect(Object.keys(styles).length).toBe(12);
+    expect(Object.keys(styles).length).toBe(13);
   });
 
   it ('Utils fetchFlexItemStyle returns correct styles', () => {
@@ -130,7 +130,7 @@ describe ('Utils', () => {
       alignSelf: '',
     });
 
-    expect(Object.keys(styles).length).toBe(7);
+    expect(Object.keys(styles).length).toBe(8);
   });
 
   it ('Utils fetchContainerElementType returns correct type with flexContainerElementType', () => {

@@ -4,8 +4,9 @@ import {
     fetchFlexContainerStyle,
     fetchContainerElementType,
 } from './utils';
+import { ReactElement } from 'react';
 
-export const FlexContainer = (props: IFlexContainer) => {
+export const FlexContainer = (props: IFlexContainer): ReactElement => {
     const style = fetchFlexContainerStyle(props);
     const elementType = fetchContainerElementType(props);
 

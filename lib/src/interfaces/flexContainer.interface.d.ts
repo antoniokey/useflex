@@ -12,6 +12,7 @@ export default interface IFlexContainer {
     flexContainerElementType?: string;
     className?: string;
     flexWrap?: FlexWrap;
+    flexFlow?: string;
     children?: any;
     style?: any;
 }
