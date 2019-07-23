@@ -6,6 +6,7 @@ export default interface IFlexItem {
     flexGrow?: string | number,
     flex?: string | number,
     alignSelf?: AlignSelf,
+    order?: number,
     itemType?: string,
     className?: string,
     children?: any,

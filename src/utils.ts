@@ -28,12 +28,13 @@ export const fetchFlexContainerStyle = (props: IFlexContainer) => ({
     flexBasis: props.flexBasis,
     alignSelf: props.alignSelf,
     flexWrap: props.flexWrap,
+    flexFlow: props.flexFlow,
     ...props.style,
 });
 
 export const fetchContainerElementType = (props: IFlexContainer) => props.flexContainerElementType ? props.flexContainerElementType : 'div';
 
-export const fetchFlexItemStyle = (props: any) => ({
+export const fetchFlexItemStyle = (props: IFlexItem) => ({
     flex: props.flex,
     flexGrow: props.flexGrow,
     flexShrink: props.flexShrink,
@@ -41,6 +42,7 @@ export const fetchFlexItemStyle = (props: any) => ({
     alignSelf: props.alignSelf,
     height: props.height,
     width: props.width,
+    order: props.order,
     ...props.style,
 });
 
