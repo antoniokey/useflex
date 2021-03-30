@@ -8,7 +8,7 @@ export default interface Item {
     flex?: string | number;
     alignSelf?: AlignSelf;
     order?: number;
-    itemType?: string;
+    type?: string;
     className?: string;
     children?: any;
     style?: any;

@@ -10,7 +10,7 @@ export default interface Container {
     flexGrow?: string;
     flex?: string;
     alignSelf?: AlignSelf;
-    flexContainerElementType?: string;
+    type?: string;
     className?: string;
     flexWrap?: Wrap;
     flexFlow?: string;

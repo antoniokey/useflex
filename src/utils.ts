@@ -16,7 +16,7 @@ export const createReactElement = (elementType: string, style: any, className: s
   return el;
 }
 
-export const fetchFlexContainerStyle = (props: Container): any => ({
+export const fetchContainerStyle = (props: Container): any => ({
   display: Display.Flex,
   flexDirection: props.direction,
   width: props.width,
@@ -33,9 +33,9 @@ export const fetchFlexContainerStyle = (props: Container): any => ({
   ...props.style,
 });
 
-export const fetchContainerElementType = (props: Container): string => props.flexContainerElementType ? props.flexContainerElementType : Type.Div;
+export const fetchContainerElementType = (props: Container): string => props.type ? props.type : Type.Div;
 
-export const fetchFlexItemStyle = (props: Item): any => ({
+export const fetchItemStyle = (props: Item): any => ({
   flex: props.flex,
   flexGrow: props.flexGrow,
   flexShrink: props.flexShrink,
@@ -47,6 +47,6 @@ export const fetchFlexItemStyle = (props: Item): any => ({
   ...props.style,
 });
 
-export const fetchFlexItemElementType = (props: Item): string => props.itemType ? props.itemType : props.children.type;
+export const fetchItemElementType = (props: Item): string => props.type ? props.type : props.children.type;
 
-export const fetchFlexItemElementChildren = (props: Item): any => props.itemType ? props.children : props.children.props.children;
+export const fetchItemElementChildren = (props: Item): any => props.type ? props.children : props.children.props.children;

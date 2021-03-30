@@ -2,105 +2,105 @@ import React from 'react';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
-import { FlexContainer } from '../lib/src/FlexContainer';
-import { FlexItem } from '../lib/src/FlexItem';
+import { Container } from '../lib/src/components/Container';
+import { Item } from '../lib/src/components/Item';
 import {
-  fetchFlexContainerStyle,
-  fetchFlexItemStyle,
   fetchContainerElementType,
-  fetchFlexItemElementType,
+  fetchContainerStyle,
+  fetchItemElementType,
+  fetchItemStyle
 } from '../lib/src/utils';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe('FlexContainer', () => {
+describe('Container', () => {
 
-  it ('FlexContainer with parent div container block', () => {
-    const el = shallow(<FlexContainer />);
+  it ('Container with parent div container block', () => {
+    const el = shallow(<Container />);
 
     expect(el.find('div')).toHaveLength(1);
   });
 
-  it ('FlexContainer with parent h1 container block', () => {
-    const el = shallow(<FlexContainer flexContainerElementType='h1' />);
+  it ('Container with parent h1 container block', () => {
+    const el = shallow(<Container type='h1' />);
 
     expect(el.find('h1')).toHaveLength(1);
   });
 
-  it ('FlexContainer correct displaying flexContainer tree without flexContainerElementType', () => {
+  it ('Container correct displaying Container tree without type', () => {
     const el = shallow(
-      <FlexContainer>
+      <Container>
         <div>
           <span>Test</span>
         </div>
-      </FlexContainer>
+      </Container>
     );
 
     expect(el.find('div').find('div').find('span').text()).toBe('Test');
   });
 
-  it ('FlexContainer correct displaying flexContainer tree with flexContainerElementType', () => {
+  it ('Container correct displaying Container tree with type', () => {
     const el = shallow(
-      <FlexContainer flexContainerElementType='h1'>
+      <Container type='h1'>
         <span>Test</span>
-      </FlexContainer>
+      </Container>
     );
 
     expect(el.find('h1').find('span').text()).toBe('Test');
   });
 
-  it ('FlexContainer correct displaying container styles', () => {
-    const el = shallow(<FlexContainer className='flex-container-test' />);
+  it ('Container correct displaying container styles', () => {
+    const el = shallow(<Container className='flex-container-test' />);
 
     expect(el.hasClass('flex-container flex-container-test')).toBe(true);
   });
 
 });
 
-describe('FlexItem', () => {
+describe('Item', () => {
 
-  it ('FlexItem with itemType', () => {
-    const el = shallow(<FlexItem itemType='span' />);
+  it ('Item with type', () => {
+    const el = shallow(<Item type='span' />);
 
     expect(el.find('span')).toHaveLength(1);
   });
 
-  it ('FlexItem without itemType, but with children elements', () => {
+  it ('Item without type, but with children elements', () => {
     const el = shallow(
-      <FlexItem>
+      <Item>
         <div>
           <h1></h1>
         </div>
-      </FlexItem>
+      </Item>
     );
 
     expect(el.find('div')).toHaveLength(1);
   });
 
-  it ('FlexItem correct displaying flexItem tree without itemType', () => {
+  it ('Item correct displaying Item tree without type', () => {
     const el = shallow(
-      <FlexItem>
+      <Item>
         <div>
           <span>Test</span>
         </div>
-      </FlexItem>
+      </Item>
     );
 
     expect(el.find('div').find('span').text()).toBe('Test');
   });
 
-  it ('FlexItem correct displaying flexItem tree with itemType', () => {
+  it ('Item correct displaying Item tree with type', () => {
     const el = shallow(
-      <FlexItem itemType='div'>
+      <Item type='div'>
         <span>Test</span>
-      </FlexItem>
+      </Item>
     );
 
     expect(el.find('div').find('span').text()).toBe('Test');
   });
 
-  it ('FlexItem correct displaying flexItem styles', () => {
-    const el = shallow(<FlexItem itemType='h3' className='flex-item-test' />);
+  it ('Item correct displaying Item styles', () => {
+    const el = shallow(<Item type='h3' className='flex-item-test' />);
 
     expect(el.hasClass('flex-item-test')).toBe(true);
   });
@@ -109,8 +109,8 @@ describe('FlexItem', () => {
 
 describe ('Utils', () => {
 
-  it ('Utils fetchFlexContainerStyle returns correct styles', () => {
-    const styles = fetchFlexContainerStyle({
+  it ('Utils fetchContainerStyle returns correct styles', () => {
+    const styles = fetchContainerStyle({
       width: '',
       height: '',
       direction: '',
@@ -122,8 +122,8 @@ describe ('Utils', () => {
     expect(Object.keys(styles).length).toBe(13);
   });
 
-  it ('Utils fetchFlexItemStyle returns correct styles', () => {
-    const styles = fetchFlexItemStyle({
+  it ('Utils fetchItemStyle returns correct styles', () => {
+    const styles = fetchItemStyle({
       width: '',
       height: '',
       flexGrow: '',
@@ -133,26 +133,26 @@ describe ('Utils', () => {
     expect(Object.keys(styles).length).toBe(8);
   });
 
-  it ('Utils fetchContainerElementType returns correct type with flexContainerElementType', () => {
-    const type = fetchContainerElementType({ flexContainerElementType: 'table' });
+  it ('Utils fetchContainerElementType returns correct type with type', () => {
+    const type = fetchContainerElementType({ type: 'table' });
 
     expect(type).toBe('table');
   });
 
-  it ('Utils fetchContainerElementType returns correct type without flexContainerElementType', () => {
+  it ('Utils fetchContainerElementType returns correct type without type', () => {
     const type = fetchContainerElementType({});
 
     expect(type).toBe('div');
   });
 
-  it ('Utils fetchFlexItemElementType returns correct type with itemType', () => {
-    const type = fetchFlexItemElementType({ itemType: 'table' });
+  it ('Utils fetchItemElementType returns correct type with type', () => {
+    const type = fetchItemElementType({ type: 'table' });
 
     expect(type).toBe('table');
   });
 
-  it ('Utils fetchFlexItemElementType returns correct type without itemType', () => {
-    const type = fetchFlexItemElementType({ children: {} });
+  it ('Utils fetchItemElementType returns correct type without type', () => {
+    const type = fetchItemElementType({ children: {} });
 
     expect(type).toBe(undefined);
   });
