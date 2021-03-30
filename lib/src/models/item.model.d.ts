@@ -1,4 +1,5 @@
-export default interface IFlexItem {
+import { AlignSelf } from '../enums/flex.enum';
+export default interface Item {
     width?: string;
     height?: string;
     flexBasis?: string | number;

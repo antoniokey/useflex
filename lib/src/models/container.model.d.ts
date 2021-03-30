@@ -1,4 +1,5 @@
-export default interface IFlexContainer {
+import { JustifyContent, AlignItems, AlignSelf, Wrap } from '../enums/flex.enum';
+export default interface Container {
     direction?: string;
     width?: string;
     height?: string;
@@ -11,7 +12,7 @@ export default interface IFlexContainer {
     alignSelf?: AlignSelf;
     flexContainerElementType?: string;
     className?: string;
-    flexWrap?: FlexWrap;
+    flexWrap?: Wrap;
     flexFlow?: string;
     children?: any;
     style?: any;

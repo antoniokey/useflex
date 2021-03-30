@@ -1,9 +1,9 @@
-import React from 'react';
-import IFlexContainer from './interfaces/flexContainer.interface';
-import IFlexItem from './interfaces/flexItem.interface';
-export declare const createReactElement: (elementType: string, style: any, className: string, children: any) => React.ReactElement<any, string | ((props: any) => React.ReactElement<any, string | any | (new (props: any) => React.Component<any, any, any>)> | null) | (new (props: any) => React.Component<any, any, any>)>;
-export declare const fetchFlexContainerStyle: (props: IFlexContainer) => any;
-export declare const fetchContainerElementType: (props: IFlexContainer) => string;
-export declare const fetchFlexItemStyle: (props: IFlexItem) => any;
-export declare const fetchFlexItemElementType: (props: IFlexItem) => string;
-export declare const fetchFlexItemElementChildren: (props: IFlexItem) => any;
+import { ReactElement } from 'react';
+import Container from './models/container.model';
+import Item from './models/item.model';
+export declare const createReactElement: (elementType: string, style: any, className: string, children: any) => ReactElement;
+export declare const fetchFlexContainerStyle: (props: Container) => any;
+export declare const fetchContainerElementType: (props: Container) => string;
+export declare const fetchFlexItemStyle: (props: Item) => any;
+export declare const fetchFlexItemElementType: (props: Item) => string;
+export declare const fetchFlexItemElementChildren: (props: Item) => any;
