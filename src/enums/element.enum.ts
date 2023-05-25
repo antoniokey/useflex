@@ -1,7 +1,7 @@
 export enum Display {
-  Flex = 'flex'
+  Flex = 'flex',
 }
 
 export enum Type {
-  Div = 'div'
+  Div = 'div',
 }

@@ -1,10 +1,16 @@
 import React, { ReactElement } from 'react';
+
 import Container from './models/container.model';
 import Item from './models/item.model';
 import { Display, Type } from './enums/element.enum';
 
-export const createReactElement = (elementType: string, style: any, className: string, children: any): ReactElement => {
-  const el = React.createElement(
+export const createReactElement = (
+  elementType: string,
+  style: any,
+  className: string,
+  children: any,
+): ReactElement => {
+  const element = React.createElement(
     elementType,
     {
       style,
@@ -13,7 +19,7 @@ export const createReactElement = (elementType: string, style: any, className: s
     children,
   );
 
-  return el;
+  return element;
 }
 
 export const fetchContainerStyle = (props: Container): any => ({
@@ -29,11 +35,16 @@ export const fetchContainerStyle = (props: Container): any => ({
   flexBasis: props.flexBasis,
   alignSelf: props.alignSelf,
   flexWrap: props.flexWrap,
-  flexFlow: props.flexFlow ? props.flexFlow : `${props.direction} ${props.flexWrap}`,
+  flexFlow: props.flexFlow
+    ? props.flexFlow
+    : `${props.direction} ${props.flexWrap}`,
   ...props.style,
 });
 
-export const fetchContainerElementType = (props: Container): string => props.type ? props.type : Type.Div;
+export const fetchContainerElementType = (props: Container): string =>
+  props.type
+    ? props.type
+    : Type.Div;
 
 export const fetchItemStyle = (props: Item): any => ({
   flex: props.flex,
@@ -47,6 +58,12 @@ export const fetchItemStyle = (props: Item): any => ({
   ...props.style,
 });
 
-export const fetchItemElementType = (props: Item): string => props.type ? props.type : props.children.type;
+export const fetchItemElementType = (props: Item): string =>
+  props.type
+    ? props.type
+    : props.children.type;
 
-export const fetchItemElementChildren = (props: Item): any => props.type ? props.children : props.children.props.children;
+export const fetchItemElementChildren = (props: Item): any =>
+  props.type
+    ? props.children
+    : props.children.props.children;
